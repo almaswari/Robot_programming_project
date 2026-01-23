@@ -1,6 +1,3 @@
-Here is the updated **README.md**. It includes the new instructions for **Automatic PID Control**, **Real-time Plotting**, and the required Python dependencies.
-
-Overwrite your existing file at `~/ws_drone/src/quadrotor_sim/README.md` with this content:
 
 ```markdown
 # ROS 2 Jazzy Quadrotor Simulation 🚁

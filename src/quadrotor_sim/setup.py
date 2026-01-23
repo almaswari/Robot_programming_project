@@ -12,9 +12,9 @@ setup(
     data_files=[
         ('share/ament_index/resource_index/packages', ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
-        (os.path.join('share', package_name, 'launch'), glob('quadrotor_sim/launch/*')),
-        (os.path.join('share', package_name, 'model'), glob('quadrotor_sim/models/*')), # Updated path
-        (os.path.join('share', package_name, 'parameters'), glob('quadrotor_sim/parameters/*')),
+        (os.path.join('share', package_name, 'launch'), glob('src/launch/*')), # Changed
+        (os.path.join('share', package_name, 'model'), glob('src/models/*')), # Changed
+        (os.path.join('share', package_name, 'parameters'), glob('src/parameters/*')), # Changed
     ],
     install_requires=['setuptools'],
     zip_safe=True,
@@ -29,8 +29,8 @@ setup(
     },
     entry_points={
         'console_scripts': [
-            'position_controller = quadrotor_sim.controllers.position_controller:main', # Updated path
-            'data_plotter = quadrotor_sim.plotters.data_plotter:main', # Updated path
+            'position_controller = src.controllers.position_controller:main', # Changed
+            'data_plotter = src.plotters.data_plotter:main', # Changed
         ],
     },
 )

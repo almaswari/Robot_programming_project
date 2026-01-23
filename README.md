@@ -9,9 +9,9 @@
 
 | Course | Robot Programming (Fall 2025) |
 | :--- | :--- |
-| **Author** | [Your Name] |
+| **Author** | [Mohammed Almaswary (517097) ,Zyad Al-Shuja (478896)] |
 | **Deadline** | January 23, 2026 |
-| **Status** | Final Submission - Docker Verified ✅ |
+| **Status** | Final Submission  |
 | **Simulator** | Gazebo Harmonic |
 | **Middleware** | ROS 2 Jazzy Jalisco |
 
@@ -113,7 +113,7 @@ ros2 run quadrotor_sim data_plotter
 ---
 
 ## 🐳 5. Portability (Docker Deployment)
-To fulfill the course requirement for portability, the project is fully Dockerized. The image has been tested and verified to build the modular structure successfully.
+The project is fully Dockerized. The image has been tested and verified to build the modular structure successfully.
 
 **Run the simulation via Docker with GUI support:**
 ```bash
@@ -125,6 +125,7 @@ docker run -it --rm --net=host --ipc=host -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:
 ```
 
 ---
+
 
 
 

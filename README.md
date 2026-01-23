@@ -71,6 +71,7 @@ source install/setup.bash
 ### Terminal 1: Launch Simulation
 Starts Gazebo, spawns the drone, and loads the ROS bridge.
 ```bash
+cd ~/ws_drone
 source install/setup.bash
 ros2 launch quadrotor_sim gazebo_model.launch.py
 ```
@@ -113,6 +114,7 @@ ros2 run quadrotor_sim position_controller
 ### Terminal 4: Telemetry Plotter
 Visualize the Target vs. Actual position in real-time.
 ```bash
+cd ~/ws_drone
 source install/setup.bash
 ros2 run quadrotor_sim data_plotter
 ```
@@ -140,3 +142,4 @@ docker run -it --rm --net=host --ipc=host -e DISPLAY=\$DISPLAY -v /tmp/.X11-unix
 
 *Built for the Fall 2025 Robot Programming Course.*
 EOF
+

@@ -13,7 +13,7 @@ setup(
         ('share/ament_index/resource_index/packages', ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
         (os.path.join('share', package_name, 'launch'), glob('quadrotor_sim/launch/*')),
-        (os.path.join('share', package_name, 'model'), glob('quadrotor_sim/model/*')),
+        (os.path.join('share', package_name, 'model'), glob('quadrotor_sim/models/*')), # Updated path
         (os.path.join('share', package_name, 'parameters'), glob('quadrotor_sim/parameters/*')),
     ],
     install_requires=['setuptools'],
@@ -29,9 +29,8 @@ setup(
     },
     entry_points={
         'console_scripts': [
-            'gazebo_model_launch = quadrotor_sim.gazebo_model_launch:generate_launch_description',
-            'position_controller = quadrotor_sim.position_controller:main',
-            'data_plotter = quadrotor_sim.data_plotter:main', # <--- NEW LINE
+            'position_controller = quadrotor_sim.controllers.position_controller:main', # Updated path
+            'data_plotter = quadrotor_sim.plotters.data_plotter:main', # Updated path
         ],
     },
 )

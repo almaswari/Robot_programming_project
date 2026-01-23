@@ -1,5 +1,5 @@
 
-# 🚁 Autonomous Quadrotor Simulation in ROS 2 Jazzy
+#  Autonomous Quadrotor Simulation in ROS 2 Jazzy
 
 ![ROS 2 Jazzy](https://img.shields.io/badge/ROS_2-Jazzy-blue?logo=ros&logoColor=white)
 ![Gazebo Harmonic](https://img.shields.io/badge/Gazebo-Harmonic-orange?logo=gazebo&logoColor=white)
@@ -17,7 +17,7 @@
 
 ---
 
-## 🎯 1. Project Objective & Problem Statement
+##  1. Project Objective & Problem Statement
 The goal of this project is to design and implement a fully autonomous 3D Quadrotor simulation. Moving beyond 2D ground vehicles, this simulation addresses the complexities of **non-linear flight dynamics**, **gravity compensation**, and **6-DOF stabilization**.
 
 Key challenges solved in this implementation:
@@ -27,7 +27,7 @@ Key challenges solved in this implementation:
 
 ---
 
-## 🏗️ 2. Modular Architecture (Logical Code Separation)
+##  2. Modular Architecture (Logical Code Separation)
 In accordance with the course requirements for modularity and maintainability, the repository follows a strictly decoupled structure. Each module represents a distinct logical component of the robotics stack.
 
 ```text
@@ -53,23 +53,23 @@ Robot_programming_project/
 
 ---
 
-## ✨ 3. Technical Implementation Details
+##  3. Technical Implementation Details
 
-### 🤖 Hybrid Control System
+###  Hybrid Control System
 *   **Manual Mode:** Direct velocity control via the `teleop_twist_keyboard` interface for flight testing.
 *   **Autonomous Mode:** A high-frequency Python node that calculates $(x, y, z)$ errors and outputs velocity commands via a tuned PID algorithm featuring **Integral Clamping** to prevent windup.
 
-### 📐 World-to-Body Transformation
+###  World-to-Body Transformation
 A critical feature of the navigation system is the handling of the drone's orientation. Because velocity commands are relative to the drone's heading, the controller uses the current **Yaw angle** (extracted from Odometry) to rotate the error vectors from the World Frame to the Body Frame, preventing instability during rotation.
 
-### 📊 Real-Time Visualization
+###  Real-Time Visualization
 The `data_plotter` module provides live feedback of the drone's telemetry. To ensure the high-frequency ROS 2 communication is not interrupted by the GUI rendering, the plotter utilizes **background threading** and **synchronized data snapshots** to maintain thread safety.
 
 ---
 
-## 🚀 4. Launch and Operation Guide
+##  4. Launch and Operation Guide
 
-### 🔨 Building the Workspace
+###  Building the Workspace
 Ensure you have installed the requirements (`python3-matplotlib`, `ros-jazzy-ros-gz`).
 ```bash
 cd ~/ws_drone
@@ -77,7 +77,7 @@ colcon build --symlink-install
 source install/setup.bash
 ```
 
-### 🎮 Running the simulation (4 Terminals)
+###  Running the simulation (4 Terminals)
 
 **Terminal 1: Start Simulation Environment**
 ```bash
@@ -112,7 +112,7 @@ ros2 run quadrotor_sim data_plotter
 
 ---
 
-## 🐳 5. Portability (Docker Deployment)
+##  5. Portability (Docker Deployment)
 The project is fully Dockerized. The image has been tested and verified to build the modular structure successfully.
 
 **Run the simulation via Docker with GUI support:**
@@ -125,6 +125,7 @@ docker run -it --rm --net=host --ipc=host -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:
 ```
 
 ---
+
 
 
 
